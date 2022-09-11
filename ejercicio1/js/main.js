@@ -3,16 +3,25 @@
 
 // console.log(Math.max(3, 5, 7, 1, 6))
 
-let numeros = [3, 5, 7, 1, 6]
+let numeros = [3, 5, 7, 1, 6];
 let resultado = 0;
+    console.log("resultado final= "+ mayor(numeros));
 
-for (let i = 0; i < numeros.length; i++) {
-    if (numeros[i] > resultado){
+function mayor(datos) {
     
-    resultado = numeros[i]};
-    
+
+for (let i = 0; i < datos.length; i++) 
+{
+    if (datos[i] > resultado)
+    {
+        resultado = datos[i]
+        console.log(resultado);
+        
+    }
+    console.log("Número de i igual a: " + resultado);
 }
-
-console.log(resultado);
-
-
+    return resultado;
+} 
+    
+  
+    
