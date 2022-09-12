@@ -7,4 +7,5 @@ let entrada = [1, 2, 5, 14, 24, 31, 50, 105]
 
 
 const compara =  [1, 2, 5, 14, 24, 31, 50, 105].sort();
+
 console.log(compara);
