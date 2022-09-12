@@ -8,37 +8,33 @@
 let caso1 = [1, 22, 5, 17, 10, 5, 40, 5]; 
 let caso2 = [7, 41, 5, 7, 10, 13, 2];
 let caso3 = [1, 22, 5, 14, 24, 31, 27, 15, 105]
-let repetidos = [];
-let repetidos2 = [];
-let repetidos3 =[];
 
+console.log("En el caso 1 se repite: " + repetidos(caso1));
+console.log("En el caso 2 se repite: " + repetidos(caso2));
+console.log("En el caso 3 se repite: " + repetidos(caso3));
 
-const compara =  [1, 22, 5, 17, 10, 5, 40, 5].sort();//Empieza caso1
-for (let index = 0; index < caso1.length; index++) {
-    if (compara[index+1] == compara[index]){
-        repetidos.push (compara[index]);
+function repetidos(lista) 
+{
+    let repetido = 0;
+    let resultado = false;
+    
+    for (let index1 = lista.length-1; index1 >= 0 ; index1--) {
+        //console.log ("index1 " + lista[index1])
+        for (let index2 = index1-1; index2 >= 0; index2--) {
+           // console.log ("index2 " + lista[index2])
+            
+            if (lista [index1] == lista[index2]) {
+                repetido = lista[index1]
+                resultado = true
+                console.log("El número "+ repetido + " se repite en el arreglo")           
+            }  
+            
+        }        
+            
     }
-    
-}
-console.log("Caso 1:" + repetidos);//Finaliza caso 1
-
-
-const compara2 = [7, 41, 5, 7, 10, 13, 2].sort();
-for (let index = 0; index < caso2.length; index++) {
-    if (compara2[index+1] == compara2[index]){
-        repetidos2.push (compara2[index]);
-    }
-    
-}
-console.log("Caso 2: "+ repetidos2);//Finaliza caso 2
-
-const compara3 = [1, 22, 5, 14, 24, 31, 27, 15, 105].sort();
-for (let index = 0; index < caso3.length; index++) {
-    if (compara3[index+1] == compara3[index]){
-        repetidos3.push (compara3[index]);
-    } 
-    
-}
-console.log("Caso 3: "+ repetidos3);//Finaliza caso 3
+    if (resultado == false) {
+              console.log("No se repite ninguno")}
+    return resultado;
+};
 
 
